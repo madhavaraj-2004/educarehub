@@ -1,0 +1,296 @@
+{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            position: fixed;
+            top: 20px;
+            margin-top: 20px;
+            left: 20px;
+            padding: 10px 10px;
+            border-radius: 8px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e2e9e6;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #27ae60;
+        }
+
+        /* Hero Section with Futuristic Background */
+        .hero {
+            background-image: url('https://i.pinimg.com/736x/56/8d/54/568d546b453de56cf1decd9b912773ee.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+    
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: #f0f0f0;
+            line-height: 1.8;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Enhanced Green Button with Zoom Animation */
+        .browse-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .browse-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .browse-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Enhanced Zoom In Animation on Hover */
+        .browse-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(39, 174, 96, 0.5), 0 0 30px rgba(46, 204, 113, 0.4);
+            background: linear-gradient(45deg, #229954, #27ae60);
+        }
+
+        /* Zoom Out Animation on Click */
+        .browse-btn:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease;
+        }
+
+        /* Enhanced Pulse Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4), 0 0 20px rgba(46, 204, 113, 0.3);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 15px 40px rgba(39, 174, 96, 0.6), 0 0 35px rgba(46, 204, 113, 0.5);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4), 0 0 20px rgba(46, 204, 113, 0.3);
+            }
+        }
+
+        .browse-btn.pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Text Glow Animation */
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.5), 0 0 10px rgba(46, 204, 113, 0.3);
+            }
+            50% {
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.5), 0 0 20px rgba(46, 204, 113, 0.6);
+            }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #667eea 0%, #4ba25c 100%);
+            color: white;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2ecc71;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+        }
+
+        .feature-card h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #f0f0f0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .browse-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .hero-content {
+                padding: 2rem;
+            }
+
+            nav {
+                padding: 1rem 3%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .browse-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .hero-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            
+    <!-- Logo positioned in top-left corner -->
+            <div class="logo">📚 E-department<style> 
+            </style>
+           
+        </nav>
